@@ -1,0 +1,115 @@
+body {
+    width: 100vw;
+}
+
+#navbar {
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    background-color: #F97830;
+}
+
+#navbar .logo {
+    cursor: pointer;
+}
+
+#navbar img {
+    display: flex;
+    align-self: flex-start;
+}
+
+#items-container {
+    width: 500px;
+    display: flex;
+    justify-content: space-between;
+}
+
+#items-container span{
+    cursor: pointer;
+    font-weight: bold;
+}
+
+#items-container span:hover {
+    color: blue;
+    transition: color 0.2s linear;
+}
+
+#icons-container {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+#icons-container img {
+    margin: 0 10px;
+    cursor: pointer;
+}
+
+#cards-container {
+    width: calc(100% - 175px);
+    margin: 40px 175px;
+    display: flex;
+    flex-direction: row;
+    align-self: center;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+.card {
+    margin: 30px 30px;
+    cursor: pointer;
+}
+
+.logo {
+    width: 100px;
+    height: 100px;
+    background-color: #F97830;
+}
+
+.icon {
+    width: 20px;
+    height: 20px;
+}
+
+.card img{
+    width: 300px;
+    border-radius: 8px;
+    border: 1px solid #cccccc;
+}
+
+#footer {
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    background-color: #F97830;
+}
+
+#footer .logo {
+    justify-content: flex-start;
+    align-self: center;
+    margin-left: 250px;
+}
+
+#footer-links {
+    display: flex;
+    align-items: center;
+    margin-left: 300px;
+}
+
+ul {
+    display: flex;
+    flex-direction: row;
+}
+
+li {
+    list-style: none;
+    cursor: pointer;
+    font-weight: bold;
+    margin: 0 30px;
+}
+
+li:hover {
+    color: blue;
+    transition: color 0.2s linear;
+}
