@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+  <script>
+    function Retangulo(base, altura){
+        this.base = base;
+        this.altura = altura;
+        this.area = base*altura;
+        alert("Área é igual a: " + this.area);
+    }
+
+    base = prompt("Digite o valor da base:");
+    altura = prompt("Digite o valor da altura:");
+    var Retangulo = new Retangulo(base,altura)
+  </script>
+</body>
+</html>
