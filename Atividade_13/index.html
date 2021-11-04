@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Atv 14</title>
+    <style>
+      .container {
+        display: flex;
+        flex: 1;
+        justify-content: center;
+        align-content: center;
+      }
+      
+      .labels input,
+      .labels textarea {
+        display: block;
+        margin: 10px 0;
+      }
+
+      .buttons {
+        display: flex;
+        justify-content: center;
+      }
+
+      .buttons input {
+        margin: 20px 5px;
+        background-color: #3ba2ff;
+        color: white;
+        cursor: pointer;
+        border-radius: 4px;
+        border: 1px solid #444442;
+      }
+
+      .labels {
+        display: flex;
+        align-items: center;
+        flex-wrap: nowrap;
+      }
+
+      .buttons input:hover {
+        background-color: #444442;
+        transition: background 0.3s ease 0s, color 0.3s ease 0s;
+      }
+
+      h3, h5 {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <section class="container">
+      <form id="form">
+        <h1>Formulário principal</h1>
+        <label class="labels"
+          >Nome:
+          <input type="text" name="nome" id="nome" />
+        </label>
+        <label class="labels"
+          >E-mail:
+          <input type="text" name="email" id="email" />
+        </label>
+        <label class="labels"
+          >Comentário:
+          <textarea name="comentario" id="comentario"></textarea>
+        </label>
+        <h3>Pesquisa</h3>
+        <h5>Primeira vez na página?</h5>
+        <label
+          >Sim
+          <input type="radio" name="primeira" value="s" />
+        </label>
+        <label
+          >Não
+          <input type="radio" name="primeira" value="n" />
+        </label>
+        <br />
+        <div class="buttons">
+          <input type="reset" value="Limpar" />
+          <input type="submit" value="Enviar" />
+        </div>
+      </form>
+    </section>
+  </body>
+  <script>
+    
+    const formulario = document.getElementById("form");
+
+    function validarFormulario(evt) {
+      evt.preventDefault();
+      const nome = document.getElementById("nome");
+      const email = document.getElementById("email");
+      const comentario = document.getElementById("comentario");
+      const primeira = document.querySelector(
+        "input[name=primeira]:checked"
+      );
+
+      if (nome.value.length < 10) {
+        alert("O nome deve conter no mínimo 10 caracteres!");
+        return;
+      }
+      if (/^.*?@.*?.com*(\.\w{2,3})+$/.test(email.value)) {
+        alert("E-mail inválido!");
+        return;
+      }
+      if (comentario.value.length < 20) {
+        alert("O comentário deve conter no mínimo 20 caracteres!");
+        return;
+      }
+      if (primeira === null) {
+        alert("Informe a resposta para a pesquisa!");
+        return;
+      }
+
+      console.log({
+        nome: nome.value,
+        email: email.value,
+        comentario: comentario.value,
+        primeira: primeira.value,
+      });
+    }
+
+    formulario.addEventListener("submit", validarFormulario);
+  </script>
+</html>
