@@ -1,0 +1,62 @@
+/* ============== ESTILIZAÇÃO GERAL ============== */
+html {
+    scroll-behavior: smooth;
+}
+body {
+    background-image: url("../imgs/public/bd.svg") ;
+    background-color: rgb(14, 13, 13);
+    color: white;
+}
+
+/* ============== BARRA DE SCROLL ============== */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #717171;
+  border-radius: 15px;
+}
+
+main {
+    margin: 0 auto;
+    width: calc(100% - 40px);
+    max-width: 1200px;
+}
+
+/*================= About animation =================*/
+[data-animation] {
+  opacity: 0;
+  transition: 0.5s;
+}
+
+[data-animation="left"] {
+  transform: translate3d(-20px, 0px, 0px);
+}
+
+[data-animation="right"] {
+  transform: translate3d(20px, 0px, 0px);
+}
+
+[data-animation].animate {
+  opacity: 1;
+  transform: translate3d(0px , 0px, 0px);
+}
+
+/* ============== BREAKPOINT 600px ============== */
+@media(min-width: 600px) {
+  main {
+    margin: 0 auto;
+    width: calc(100% - 80px);
+
+    margin-top: 1.5rem;
+  }
+}
+
+/* ============== BREAKPOINT 1024px ============== */
+@media(min-width: 1024px) {
+  /* ============== MAIN ============== */
+  main {
+    width: calc(100% - 120px);
+  }
+}
